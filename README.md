@@ -51,3 +51,18 @@ Server:
   Obtains the protobuf data through the gRPC and does the internal matching stuff
 Database:
   after the matching stuff this will enter the database (or an intermediate buffer if this access is too slow)
+
+
+  # Usage
+
+  If you have make installed you can just run
+
+  `make` 
+
+  in the top level directory
+
+  If you have docker instead
+
+  `docker build -t app`
+
+  `docker run --rm app`
