@@ -5,7 +5,7 @@ FROM golang:1.25.4
 WORKDIR /app
 
 # loads these for caching so it only runs when they change
-COPY go.mod ./
+COPY go.mod go.sum ./
 
 RUN go mod download
 
