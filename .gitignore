@@ -31,4 +31,4 @@ go.work.sum
 # .idea/
 # .vscode/
 
-app/bin/
+app/bin/*
