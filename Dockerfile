@@ -9,6 +9,13 @@ COPY go.mod go.sum ./
 
 RUN go mod download
 
+RUN apt-get update \
+ && DEBIAN_FRONTEND=noninteractive \
+    apt-get install --no-install-recommends --assume-yes \
+      protobuf-compiler-grpc protoc-gen-go-grpc protoc-gen-go
+
+
+
 COPY . .
 
 RUN make .

@@ -57,7 +57,7 @@ Database:
 
   If you have make installed you can just run
 
-  `make` 
+  `make`
 
   in the top level directory
 
@@ -66,3 +66,5 @@ Database:
   `docker build -t app`
 
   `docker run --rm app`
+
+# TODO: Finish updating this
