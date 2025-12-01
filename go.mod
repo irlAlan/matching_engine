@@ -3,6 +3,7 @@ module github.com/irlalan/matching_engine
 go 1.25.4
 
 require (
+	github.com/BurntSushi/toml v1.4.0
 	google.golang.org/grpc v1.77.0
 	google.golang.org/protobuf v1.36.10
 )

@@ -1,0 +1,4 @@
+[connection]
+ip_addr = "localhost"
+network = "tcp"
+port = ":50051"

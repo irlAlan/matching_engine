@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+option go_package="./order_service";
+
+import "google/protobuf/timestamp.proto";
+
+message OrderID { string id = 1;}
+
+enum Status {
+    OPEN        = 0;
+    PART_FILLED = 1;
+    FILLED      = 2;
+    CANCELLED   = 3;
+}
+
+enum Type {
+    LIMIT_ORDER   = 0;
+    MARKET_ORDER  = 1;
+    STOP_ORDER    = 2;
+}
+enum Side {
+    BUY  = 0;
+    SELL = 1;
+}
+
+message Order {
+    OrderID id      = 1;
+    Side    side    = 2;
+    int32   price   = 3;
+    int32   volume  = 4;
+    Type    type    = 5;
+    Status  status  = 6;
+    string  name    = 7;
+    google.protobuf.Timestamp  time = 8;
+}
+
+enum Action {
+    CANCEL = 0;
+    MODIFY = 1;
+}
+message OrderAction {
+    OrderID id = 1;
+    optional string action = 2;
+    optional int32  amount = 3;
+}
+
+message Response {
+    int32  status_code = 1;
+    string response    = 2;
+}
+
+// The greeting service definition.
+service OrderService {
+  // Sends a greeting
+  rpc CreateNewOrder (Order)       returns (Response) {}
+  rpc CancelOrder    (OrderAction) returns (Response) {}
+  rpc ModifyOrder    (OrderAction) returns (Response) {}
+}
+
+
+
+// message TradeID { string id = 1;}
+//message Trade {
+//    TradeID id       = 1;
+//    OrderID id       = 2;
+//    string  action   = 3;
+//    int16   price    = 4;
+//    int16   quantity = 5;
+//    string  time     = 6;
+//
+//}
+// The request message containing the user's name.
+//message HelloRequest {
+//  string name = 1;
+//}
+//
+//// The response message containing the greetings.
+//message HelloReply {
+//  string reply = 1;
+//}
+//
