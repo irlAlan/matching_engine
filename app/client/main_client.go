@@ -5,6 +5,7 @@ import (
 	"log"
 	"time"
 
+	// "github.com/irlalan/matching_engine/app/config"
 	hello_pb "github.com/irlalan/matching_engine/app/proto/hello"
 	pb "github.com/irlalan/matching_engine/app/proto/order_service"
 
@@ -14,7 +15,7 @@ import (
 	// hello_pb "google.golang.org/protobuf"
 )
 
-func main() {
+func main() /*Start(conf *config.Config)*/ {
 
 	conn, err := grpc.NewClient("localhost:50051", grpc.WithTransportCredentials(insecure.NewCredentials())) //, grpc.WithBlock())
 	if err != nil {

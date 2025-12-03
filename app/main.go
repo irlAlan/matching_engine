@@ -1,6 +1,7 @@
 package main
 
 import (
+	//	"github.com/irlalan/matching_engine/app/client"
 	"github.com/irlalan/matching_engine/app/config"
 	"github.com/irlalan/matching_engine/app/server"
 )
@@ -12,6 +13,7 @@ func main() {
 	var conf config.Config
 	conf.ReadConfig()
 	server.Start(&conf)
+	// client.Start(&conf)
 }
 
 //
